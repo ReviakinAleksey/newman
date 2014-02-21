@@ -18,10 +18,8 @@ package com.stackmob.newman
 
 import com.stackmob.newman.request._
 import java.net.URL
-import com.stackmob.newman.request.HttpRequest._
-import com.stackmob.newman.request.HttpRequestWithBody._
 
-trait HttpClient {
+trait HttpClient extends HasContext{
   /**
    * perform an HTTP GET request
    * @param url the URL against which to perform the request
