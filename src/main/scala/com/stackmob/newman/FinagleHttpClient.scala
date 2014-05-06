@@ -79,6 +79,8 @@ object FinagleHttpClient {
       .hostConnectionLimit(numConnsPerHost)
       .tcpConnectTimeout(tcpConnectionTimeout)
       .requestTimeout(requestTimeout)
+      .connectTimeout(tcpConnectionTimeout)
+      .timeout(requestTimeout)
 
     val client = context.proxy.map(proxy => builder.httpProxy(proxy.address)).getOrElse(builder).build()
     val req = createNettyHttpRequest(method, url, headers, mbBody)
